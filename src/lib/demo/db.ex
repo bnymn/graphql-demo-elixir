@@ -14,7 +14,7 @@ defmodule Demo.Db do
 
   # GenServer implementation
   def init(_) do
-    {:ok, get_products(1000, 4)}
+    {:ok, get_products(10000, 4)}
   end
 
   def handle_call({:get}, _from, state) do
