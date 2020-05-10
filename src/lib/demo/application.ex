@@ -9,6 +9,7 @@ defmodule Demo.Application do
     children = [
       # Starts a worker by calling: Demo.Worker.start_link(arg)
       # {Demo.Worker, arg}
+      {Demo.Db, []},
       Plug.Cowboy.child_spec(
         scheme: :http,
         plug: Demo.Router,

@@ -7,15 +7,7 @@ defmodule Demo.Schema do
   query do
     field :products, list_of(:product) do
       resolve fn (_parent, _args, _resolution) ->
-        {:ok, [
-            %{
-              id: 1,
-              name: "test",
-              price: 1,
-              sku: "test",
-            }
-          ]
-        }
+        {:ok, Demo.Db.get()}
       end
     end
   end
