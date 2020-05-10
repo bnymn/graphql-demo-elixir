@@ -1,0 +1,13 @@
+version: '3'
+services:
+  elixir:
+    build:
+      context: ./services/elixir
+      args:
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+    tty: true
+    volumes:
+      - ./src:/app
+    ports: 
+      - "8080:8080"
